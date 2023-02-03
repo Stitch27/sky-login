@@ -1,83 +1,67 @@
 
 const Login = () => {
     return (
-        <div className="max-h-screen max-w-screen flex">
-
-            <div className="grid place-items-center max-h-screen max-w-screen w-4/6">
-
-                <img className="max-h-screen max-w-screen py-2" src="/images/loginweb.png" alt="Display"></img>
-
+        <div className="h-screen w-screen flex space-x-4 p-3  overflow-y-auto">
+            <div className="flex items-center justify-center max-h-screen w-3/5 p-4">
+                <img className="object-center h-full w-auto" src="/images/loginweb.png" alt="Display"></img>
             </div>
-
-            <div className=" h-full w-2/6 p-4 flex flex-col space-y-4">
-
-                <div className="grid place-items-center h-1/4 ">
-
+            <div className="max-h-screen w-2/5 px-2 flex flex-col space-y-4 pt-5 pr-16">
+                <div className="flex items-center justify-center h-1/6 w-auto">
                     <img className="object-scale-down h-auto w-36" src="/images/header.png" alt="Display"></img>
-
                 </div>
-
-                <div className="h-3/4 w-full">
-
-
-
-
-
-                    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-
-                        <div class="mb-10">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="correoElectronico">
-                                Correo electrónico
+                <div className="h-4/6 w-auto">
+                <form className="px-8 pt-2 bg-white">
+                        <div className="mb-6">
+                            <label className="block mb-3 text-sm font-bold text-gray-800" for="email">
+                                Email
                             </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" />
+                            <input
+                                className="w-full px-3 py-2 text-sm leading-tight text-gray-500 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                id="email"
+                                type="text"
+                                placeholder="Email"
+                            />
                         </div>
-
-                        <div class="mb-10">
-                            <label class="block text-gray-500 text-sm font-light text-lg mb-2" for="password">
-                                Contraseña
+                        <div className="mb-3">
+                            <label className="block mb-3 text-sm font-bold text-gray-800" for="password">
+                                Password
                             </label>
-                            <input class="shadow appearance-none border rounded w-3/4 py-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" />
+                            <input
+                                className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-800 border border-red-600 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                id="password"
+                                type="password"
+                                placeholder="********************"
+                            />
+                            <p className="text-xs italic text-red-600">Please choose a password.</p>
                         </div>
-
-                        <div class="flex items-center justify-between">
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                                Iniciar sesión
+                        <div className="mb-8">
+                            <input className="mr-2 leading-tight" type="checkbox" id="remember" />
+                            <label className="text-sm" for="remember">
+                                Remember Me
+                            </label>
+                        </div>
+                        <div className="mb-6 text-center">
+                            <button className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="button">
+                                Sign In
                             </button>
-                            <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-                                Olvide mi contraseña
-                            </a>
                         </div>
-
+                        <hr className="mb-5 border-t" />
+                        <div className="text-center">
+                            <p className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800">
+                                Forgot Password?
+                            </p>
+                        </div>
                     </form>
-
                 </div>
-
-                <div className="text-xs">
-
-                    <p className="text-center text-gray-400" >Dispositivos móviles(BlackBerry®, iPhone, iPad y Android) utilizando navegadores: Internet Explorer, Google Chrome, Firefox y Safari.</p>
-                    <br />
-                    <p className="text-center text-gray-400" >Navegadores soportados son Internet Explorer Versión 10 o superior, Google Chrome 50 o superior, Mozilla Firefox 42 o superior. Para MAC Safari 7 o superior.</p>
-                    <br />
-                    <p className="text-center text-gray-400" >(1) Factura electrónica únicamente disponible en México. Pago en línea disponible por el momento en México y Centroamérica.</p>
-                    <br />
-                    <p className="text-center text-gray-400" >(2) Disponible en México para equipos SKY + HD y SKY Super Plus HD.</p>
-                    <br />
-                    <p className="text-center text-gray-400" >(3) Disponible en México, excepto para los paquetes VeTV y VeTV Plus.</p>
-                    <br />
-                    <p className="text-center text-gray-400" >“Sky” y las marcas relacionadas, nombres y logotipos, son propiedad de “Sky International AG” y otras empresas del grupo.</p>
-                    <br />
-                    <p className="text-center text-gray-400" >Corporación Novavisión S. de R.L. de C.V. 2022. Prohibida su reproducción total o parcial.</p>
-                    <br />
-                    <p className="text-center text-gray-400" >SESION_ID : 022120239</p>
-                    
-                </div>
-
+                <div className="w-auto text-xs mt-5">
+                        <br />
+                        <p className="text-center text-gray-400" >Dispositivos móviles(BlackBerry®, iPhone, iPad y Android) utilizando navegadores: Internet Explorer, Google Chrome, Firefox y Safari.</p>
+                        <br />
+                        <p className="text-center text-gray-400" >Navegadores soportados son Internet Explorer Versión 10 o superior, Google Chrome 50 o superior, Mozilla Firefox 42 o superior. Para MAC Safari 7 o superior.</p>
+                    </div>
             </div>
-
         </div>
-
     );
-
 }
 
 export default Login;
