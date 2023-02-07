@@ -1,5 +1,16 @@
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+
+    const navigate = useNavigate();
+
+    const SinIng = () => {
+
+        navigate("/menu");
+        console.log("Aaron");
+        
+    }
+
     return (
         <div className="h-screen w-screen flex space-x-4 p-3  overflow-y-auto">
             <div className="flex items-center justify-center max-h-screen w-3/5 p-4">
@@ -12,7 +23,7 @@ const Login = () => {
                 <div className="h-4/6 w-auto">
                 <form className="px-8 pt-2 bg-white">
                         <div className="mb-6">
-                            <label className="block mb-3 text-sm font-bold text-gray-800" for="email">
+                            <label className="block mb-3 text-sm font-bold text-gray-800" htmlFor="email">
                                 Email
                             </label>
                             <input
@@ -23,7 +34,7 @@ const Login = () => {
                             />
                         </div>
                         <div className="mb-3">
-                            <label className="block mb-3 text-sm font-bold text-gray-800" for="password">
+                            <label className="block mb-3 text-sm font-bold text-gray-800" htmlFor="password">
                                 Password
                             </label>
                             <input
@@ -36,12 +47,12 @@ const Login = () => {
                         </div>
                         <div className="mb-8">
                             <input className="mr-2 leading-tight" type="checkbox" id="remember" />
-                            <label className="text-sm" for="remember">
+                            <label className="text-sm" htmlFor="remember">
                                 Remember Me
                             </label>
                         </div>
                         <div className="mb-6 text-center">
-                            <button className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="button">
+                            <button onClick = {SinIng} className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="button">
                                 Sign In
                             </button>
                         </div>

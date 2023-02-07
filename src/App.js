@@ -1,10 +1,10 @@
 
-import Login from "./page/Login";
+import MainRoutes from "./routes/MainRoutes";
 
 function App() {
   return (
     <>
-    <Login></Login>
+    <MainRoutes/>
     </>
   );
 }
