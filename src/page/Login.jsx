@@ -12,15 +12,16 @@ const Login = () => {
     }
 
     return (
-        <div className="h-screen w-screen flex space-x-4 p-3  overflow-y-auto">
-            <div className="flex items-center justify-center max-h-screen w-3/5 p-4">
-                <img className="object-center h-full w-auto" src="/images/loginweb.png" alt="Display"></img>
+        <div className="h-screen w-screen flex space-x-4 p-3  overflow-y-auto md:flex-row flex-col">
+            <div className="flex items-center justify-center max-h-screen md:w-3/5 w-full p-4">
+                <img className="object-center h-full w-auto hidden md:block" src="/images/loginweb.png" alt="Display"></img>
+                <img className="object-center h-full w-auto md:hidden" src="/images/loginmovil.png" alt="Display"></img>
             </div>
-            <div className="max-h-screen w-2/5 px-2 flex flex-col space-y-4 pt-5 pr-16">
+            <div className="max-h-screen px-2 flex flex-col space-y-4 pt-5 pr-16 md:w-2/5 w-full mt-10 md:mt-0">
                 <div className="flex items-center justify-center h-1/6 w-auto">
                     <img className="object-scale-down h-auto w-36" src="/images/header.png" alt="Display"></img>
                 </div>
-                <div className="h-4/6 w-auto">
+                <div className="w-auto">
                 <form className="px-8 pt-2 bg-white">
                         <div className="mb-6">
                             <label className="block mb-3 text-sm font-bold text-gray-800" htmlFor="email">
@@ -65,11 +66,11 @@ const Login = () => {
                     </form>
                 </div>
                 <div className="w-auto text-xs mt-5">
-                        <br />
-                        <p className="text-center text-gray-400" >Dispositivos móviles(BlackBerry®, iPhone, iPad y Android) utilizando navegadores: Internet Explorer, Google Chrome, Firefox y Safari.</p>
-                        <br />
-                        <p className="text-center text-gray-400" >Navegadores soportados son Internet Explorer Versión 10 o superior, Google Chrome 50 o superior, Mozilla Firefox 42 o superior. Para MAC Safari 7 o superior.</p>
-                    </div>
+                    <br />
+                    <p className="text-center text-gray-400" >Dispositivos móviles(BlackBerry®, iPhone, iPad y Android) utilizando navegadores: Internet Explorer, Google Chrome, Firefox y Safari.</p>
+                    <br />
+                    <p className="text-center text-gray-400" >Navegadores soportados son Internet Explorer Versión 10 o superior, Google Chrome 50 o superior, Mozilla Firefox 42 o superior. Para MAC Safari 7 o superior.</p>
+                </div>
             </div>
         </div>
     );
