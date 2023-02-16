@@ -10,11 +10,11 @@ const Menu = () => {
                             <img className="object-scale-down h-auto w-36" src="/images/header.png" alt="Display"></img>
                         </div>
                         <div className="px-6 py-10">
-                            <hr class="bg-blue-200 h-0.5 border-0" />
+                            <hr className="bg-blue-200 h-0.5 border-0" />
                         </div>
                         <Collapse/>
                         <div className="px-6 py-10 space-y-10">
-                            <hr class="bg-blue-200 h-0.5 border-0" />
+                            <hr className="bg-blue-200 h-0.5 border-0" />
                             <button className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-800 focus:outline-none focus:shadow-outline" type="button">
                                 Cerrar sesión
                             </button>
@@ -30,16 +30,16 @@ const Menu = () => {
                 <div className="border shadow-md flex h-[7rem] w-full px-2 py-1 flex-col space-y-2">
                     <p className="flex items-center  w-full h-auto px-2 text-xl font-bold text-blue-800">Información</p>
                     <div className="px-2">
-                        <hr class="bg-orange-400 h-0.5 border-0" />
+                        <hr className="bg-orange-400 h-0.5 border-0" />
                     </div>
                     <div className="flex items-center justify-end space-x-8 px-2 py-2">
-                        <button class="py-1 px-4 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-800 focus:outline-none focus:shadow-outline">
+                        <button className="py-1 px-4 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-800 focus:outline-none focus:shadow-outline">
                             Perfil
                         </button>
-                        <button class="py-1 px-4 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-800 focus:outline-none focus:shadow-outline">
+                        <button className="py-1 px-4 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-800 focus:outline-none focus:shadow-outline">
                             Actualizar datos
                         </button>
-                        <button class="py-1 px-4 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-800 focus:outline-none focus:shadow-outline">
+                        <button className="py-1 px-4 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-800 focus:outline-none focus:shadow-outline">
                             Cambiar contraseña
                         </button>
                     </div>

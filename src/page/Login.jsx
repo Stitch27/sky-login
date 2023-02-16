@@ -1,14 +1,28 @@
+import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { loginThunks } from '../store/modules/auth/thunks';
 
 const Login = () => {
-
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const [dataLogin, setDataLogin] = useState({
+        email: '',
+        password: ''
+    })
+    const { email, password } = dataLogin;
+
 
     const SinIng = () => {
-
-        navigate("/menu");
-        console.log("Aaron");
-        
+        dispatch(loginThunks({ email, password }))
+            .unwrap()
+        .then(() => {
+                navigate("/menu");
+            })
+            .catch(() => {
+                console.log("Hubo un error")
+            })
     }
 
     return (
@@ -22,12 +36,16 @@ const Login = () => {
                     <img className="object-scale-down h-auto w-36" src="/images/header.png" alt="Display"></img>
                 </div>
                 <div className="w-auto">
-                <form className="px-8 pt-2 bg-white">
+                    <form className="px-8 pt-2 bg-white">
                         <div className="mb-6">
                             <label className="block mb-3 text-sm font-bold text-gray-800" htmlFor="email">
                                 Email
                             </label>
                             <input
+                                value={email}
+                                onChange={(evt) => setDataLogin((prev) => {
+                                    return { ...prev, email: evt.target.value }
+                                })}
                                 className="w-full px-3 py-2 text-sm leading-tight text-gray-500 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                 id="email"
                                 type="text"
@@ -39,7 +57,11 @@ const Login = () => {
                                 Password
                             </label>
                             <input
-                                className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-800 border border-red-600 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                value={password}
+                                onChange={(evt) => setDataLogin((prev) => {
+                                    return { ...prev, password: evt.target.value }
+                                })}
+                                className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-800 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                 id="password"
                                 type="password"
                                 placeholder="********************"
@@ -53,7 +75,7 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="mb-6 text-center">
-                            <button onClick = {SinIng} className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="button">
+                            <button onClick={SinIng} className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="button">
                                 Sign In
                             </button>
                         </div>
