@@ -1,13 +1,11 @@
 const initialState = {
     user: {
-        email : '', 
-        firstName: '', 
-        gender : '', 
-        id : 0, 
-        image : '', 
+        identifier : '', 
+        account: '', 
+        name : '', 
         lastName : '', 
-        token : '', 
-        username : ''
+        creationDate : '', 
+        updateDate : ''
     }
 }
 export default initialState;
