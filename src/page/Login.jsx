@@ -2,10 +2,14 @@ import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { loginThunks } from '../store/modules/auth/thunks';
+import Swal from 'sweetalert2';
+
 
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+
+    const [loading, setLoadin] = useState(false)
 
     const [dataLogin, setDataLogin] = useState({
         email: '',
@@ -14,15 +18,22 @@ const Login = () => {
     const { email, password } = dataLogin;
 
 
-    const SinIng = () => {
-        dispatch(loginThunks({ email, password }))
+    const SinIng = async () => {
+        setLoadin(true)
+        await dispatch(loginThunks({ email, password }))
             .unwrap()
         .then(() => {
                 navigate("/menu");
             })
             .catch(() => {
-                console.log("Hubo un error")
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Autenticación',
+                    text: 'Revise sus credenciales, por favor.',
+                    confirmButtonText: 'Acceptar'
+                  })
             })
+        setLoadin(false)
     }
 
     return (
@@ -75,7 +86,7 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="mb-6 text-center">
-                            <button onClick={SinIng} className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="button">
+                            <button onClick={SinIng} className="disabled:bg-gray-200 w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="button" disabled={loading}>
                                 Sign In
                             </button>
                         </div>

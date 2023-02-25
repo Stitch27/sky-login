@@ -8,7 +8,11 @@ export const Collapse = () => {
     <ul className="space-y-6 px-3">
       <Item title="Cuenta" icon={<UserIcon className="h-6 w-6" />} items={
         [
-          { name: "Información", link: "" },
+          { name: "Información", items:[
+            {name: "Nombre", link: ""},
+            {name: "Apellido paterno", link: ""},
+            {name: "apellido materno", link: ""}
+          ]},
           { name: "Paquetes", link: "" },
           { name: "Equipos adicionales", link: "" },
           { name: "Servicio técnico", link: "" },

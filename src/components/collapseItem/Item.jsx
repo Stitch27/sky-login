@@ -15,11 +15,13 @@ export const Item = ({ title, icon, items }) => {
       </button>
       <ul className={`py-2 ml-6 space-y-2 ${!collapse && 'hidden'}`}>
         {
-          items.map(({ name, link }) =>
-            <li key={name} >
-              <button onClick={() => navigate(link)} className="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700">{name}</button>
-            </li>
-          )
+          items.map(({ name, link, items }) =>{
+
+          return items ? <Item key={name} title = {name} icon = "" items={items}></Item> : <li key={name} >
+            <button onClick={() => navigate(link)} className="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700">{name}</button>
+          </li>
+          
+          })
         }
       </ul>
     </li>
