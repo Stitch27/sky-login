@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { loginThunks } from '../store/modules/auth/thunks';
+import { loginThunks } from '../../store/modules/auth/thunks';
 import Swal from 'sweetalert2';
 
 
